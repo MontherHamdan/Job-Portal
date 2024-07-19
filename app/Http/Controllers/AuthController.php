@@ -33,7 +33,7 @@ class AuthController extends Controller
         $remember = $request->filled('remember');
 
         if (Auth::attempt($credentials, $remember)) {
-            // intended('/') redirext user for the page he was search for but he was not can saw it cause he was not authenticated
+            // intended('/') redirect user for the page he was search for but he was not can saw it cause he was not authenticated
             return redirect()->intended('/');
         } else {
             return redirect()->back()
